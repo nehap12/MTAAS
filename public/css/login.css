@@ -1,0 +1,23 @@
+.container{
+    padding-top: 80px;
+    height: 500px;
+    width: 800px;
+}
+
+.jumbotron{
+    padding-top: 20px;
+    background-color: aliceblue;
+}
+
+input{
+    float:left;
+}
+
+.well{
+    border-right: 2px;
+    background-color: aliceblue;
+}
+
+.faChanged{
+    font-size: 20px;
+}

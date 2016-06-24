@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<HTML ng-app='mainApp'>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+        <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+        <!-- Javascript -->
+        <script src="script.js"></script>
+        <script src = "./js/sidebar.js"></script>
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="./css/sidebar.css">
+        <link rel="stylesheet" href="./css/home.css">
+        <link rel="icon" href="./img/letterM.gif">
+        <title>Mobile Testing as a Service</title>
+    </head>
+    <body ng-Controller="mainController">
+     <div id="mySidebar" class="sidebar">
+          <div class="row" style="height:150px">
+             <center><img src="../public/img/user2.png" style="height:120px; width:100px; padding-top:20px"></center>
+          </div>
+          <hr>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          <a href="#/"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp Dashboard</a>
+         <hr>
+          <a href="#/about"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp Settings</a>
+         <hr>
+          <a href="#"><i class="fa fa-file-o" aria-hidden="true"></i>&nbsp Test Cases</a>
+         <hr>
+          <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i>&nbsp Reviews</a>
+         <hr>
+          <a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp Account</a>
+     </div> <!-- Sidebar -->
+     <div id="main">
+       <nav class="navbar navbar-inverse">
+         <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#/"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp MTAAS</a>
+          </div> <!-- Nav Bar -->
+            <ul class="nav navbar-nav">
+                <!-- <li class="active"><a href="#/">Home</a></li> 
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#page11">Page 1 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#page1">Page 1-1</a></li>
+                    <li><a href="#page2">Page 1-2</a></li>
+                    <li><a href="#page3">Page 1-3</a></li>
+                </ul>
+                </li>
+               <li><a href="#/about">About Us</a></li> -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                <li><a href="#logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+         </div><!-- Container Fluid -->
+       </nav>
+       <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰</span>
+       <div>
+            <div ng-view></div>
+       </div>
+  </div><!-- myNavbar -->
+  </body> 
+  
+    <!--
+     <footer>
+        <p>&copy; 2016 Neha Paul</p>
+     </footer> -->
+</HTML>
+
