@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+    <head>
+        <title>Registration</title>
+        <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+          <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/>
+           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+          <script src="https://code.angularjs.org/1.4.7/angular-route.min.js"></script>
+          <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-messages.js"></script>-->
+  <!--CSS -->
+        <link rel="stylesheet" href="../public/css/devtester.css">
+        <link rel="icon" href="../public/img/letterM.gif">
+  <!--Google Fonts-->
+        <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+        <!-- JS -->
+        <script src="../views/script.js"></script>
+    </head>
+    <body background="../public/img/background_4.jpg" ng-controller="DevController">
+        <div class="container">
+            <div class="jumbotron">
+                <form class="form-horizontal" name="devRegsitration" novalidate>
+                   <h3>Developer Registeration</h3>
+                    <hr style="background-color:#1E88E5; height:2px">
+                    <div class="form-group" ng-class="{'has-error': devRegsitration.firstname.$error.required && !devRegsitration.firstname.$pristine}">
+                      <!--<div class=row>-->
+                      <label class="control-label col-md-4" for="firstname">First Name: </label>
+                      <div class="col-md-6">
+                        <input type="text" class="form-control" id="firstname"
+                        name="firstname"
+                        ng-model="userInfo.firstname" placeholder="Please enter your firstname"
+                        ng-minlength="2"
+                        ng-maxlength="10"
+                        required>
+                      
+                        <div class="help-block" ng-show="devRegsitration.firstname.$touched && devRegsitration.firstname.$invalid">
+                            <small ng-show="devRegsitration.firstname.$error.required"> Username is required.
+                            </small>
+                            <small class="error" ng-show="devRegsitration.firstname.$error.minlength"> Firstname is required to be at least 2 characters.
+                            </small>
+                            <small class="error" ng-show="devRegsitration.firstname.$error.maxlength"> Firstname cannot be longer than 8 characters.
+                            </small>
+                        </div>
+                      </div>
+                    </div>
+                      <div class="form-group" >
+                        <label for="lastname" class="control-label col-md-4">Last Name: </label>
+                        <div class="col-md-6">
+                        <input type="text" class="form-control" id="lastname" placeholder="Please enter your lastname">
+                      </div>
+                    </div>
+                    <div class="form-group" >
+                        <label for="email" class="control-label col-md-4">Email: </label>
+                        <div class="col-md-6">
+                        <input type="email" class="form-control" id="email" placeholder="Please enter your valid email address">
+                      </div>
+                    </div>
+                    <div class="form-group" >
+                        <label for="password" class="control-label col-md-4">Password: </label>
+                        <div class="col-md-6">
+                        <input type="password" class="form-control" id="password">
+                      </div>
+                    </div>
+                    <div class="form-group" >
+                        <label for="confrmPassword" class="control-label col-md-4">Confirm Password: </label>
+                        <div class="col-md-6">
+                        <input type="password" class="form-control" id="confrmPassword">
+                      </div>
+                    </div>
+                    <div class="form-group" >
+                        <label for="org" class="control-label col-md-4">Organization: </label>
+                        <div class="col-md-6">
+                        <input type="text" class="form-control" id="org">
+                      </div>
+                    </div>
+                    <div class="form-group" >
+                        <label for="country" class="control-label col-md-4">Country: </label>
+                        <div class="col-md-6">
+                        <input type="text" class="form-control" id="country">
+                      </div>
+                    </div>
+                    <div class="form-group" >
+                       <div class="checkbox col-sm-5 col-sm-offset-2">
+                        <label class="checkbox-inline"></label>
+                        <div class="col-md-6">
+                        <input type="checkbox" required> I agree to the <a href="">Terms and Conditions</a>
+                      </div>
+                     </div>
+                    </div>
+                      <!--</div>-->
+                    <!--</div>-->
+                    <div class="form-group" >
+                        <label for="country" class="control-label col-md-3"></label>
+                        <div class="col-md-6">
+                            <br>
+                        <input type="submit" class="btn btn-success" onclick="" style="width:150px">
+                      </div>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,7 +1,6 @@
 var app = angular.module('mainApp',['ngRoute']);
 
-
-app.config(['$routeProvider','$locationProvider' , function($routeProvider, $locationProvider) {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
     .when('/',{
         
@@ -15,7 +14,25 @@ app.config(['$routeProvider','$locationProvider' , function($routeProvider, $loc
     
 }]);
 
-app.controller('mainController', function($scope){
+app.controller('mainController', ['$scope',function($scope){
                $scope.message = 'This is my Refresh Controller';
-               });
+               }]);
 
+app.controller('TesterController', ['$scope', function($scope){
+    $scope.message="Hello from tester controller";
+    $scope.userInfo = {firstname: '', lastname: '', email: '', password: '', confrmPassword: '',country:''};
+    
+    $scope.submitForm = function() {
+        console.log($scope. userInfo);
+    }
+    
+}]);
+
+app.controller('DevController', ['$scope', function($scope){
+    $scope.message="Hello from tester controller";
+    $scope.userInfo = {firstname: '', lastname: '', email: '', password: '', confrmPassword: '',country:''};
+    
+    $scope.submitForm = function() {
+        console.log($scope. userInfo);
+    }
+}]);

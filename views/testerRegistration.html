@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+    <head>
+        <title>Registration</title>
+        <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+          <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/>
+          <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>-->
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+          <script src="https://code.angularjs.org/1.4.7/angular-route.min.js"></script>
+  <!--CSS -->
+        <link rel="stylesheet" href="../public/css/registertester.css">
+        <link rel="icon" href="../public/img/letterM.gif">
+  <!--Google Fonts-->
+        <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+  <!-- JS -->
+        <script src="../views/script.js"></script>
+    </head>
+    <body background="../public/img/background_4.jpg" ng-controller="TesterController">
+        <div class="container">
+            <div class="jumbotron">
+                <form class="form-horizontal" name="registerationForm" ng-submit="submitForm()" novalidate>
+                   <h3>Tester Registeration</h3>
+                    <hr style="background-color:#1E88E5; height:2px">
+                    <!--{{message}}-->
+                    <div class="form-group" ng-class="{ 'has-error' : registerationForm.firstname.$error.required && !registerationForm.firstname.$pristine }">
+                      <!--<div class=row>-->
+                      <label class="control-label col-md-4" for="firstname">First Name: </label>
+                      <div class="col-md-6">
+                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Please enter your firstname" ng-model="userInfo.firstname" required>
+                          <span ng-show="registerationForm.firstname.$error.required && !registerationForm.firstname.$pristine" class="help-block">Please enter the valid firstname.</span>
+                      </div>
+                      <!--</div>-->
+                    </div>
+                      <div class="form-group" ng-class="{ 'has-error' : registerationForm.lastname.$error.required && !registerationForm.lastname.$pristine }">
+                        <label for="lastname" class="control-label col-md-4">Last Name: </label>
+                        <div class="col-md-6">
+                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Please enter your lastname" ng-model="userInfo.lastname" required>
+                        <span ng-show="registerationForm.lastname.$error.required && !registerationForm.lastname.$pristine" class="help-block">Please enter the valid lastname.</span>
+                      </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error has-feedback' : registerationForm.email.$invalid && !registerationForm.email.$pristine }">
+                        <label for="email" class="control-label col-md-4">Email: </label>
+                        <div class="col-md-6">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Please enter your valid email address" ng-model="userInfo.email" required>
+                        <span ng-show="registerationForm.email.$invalid && !registerationForm.email.$pristine" class="help-block glyphicon glyphicon-remove form-control-feedback"></span>
+                        <span ng-show="(registerationForm.email.$invalid || registerationForm.email.$error.required) && !registerationForm.email.$pristine" class="help-block">Please enter the valid email address.</span>
+                      </div>
+                    </div>
+                    <div class="form-group" >
+                        <label for="password" class="control-label col-md-4">Password: </label>
+                        <div class="col-md-6">
+                        <input type="password" class="form-control" id="password" ng-model="userInfo.password" required>
+                      </div>
+                    </div>
+                    <div class="form-group" >
+                        <label for="confrmPassword" class="control-label col-md-4">Confirm Password: </label>
+                        <div class="col-md-6">
+                        <input type="password" class="form-control" id="confrmPassword" ng-model="userInfo.confrmPassword" required>
+                      </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error has-feedback' : registerationForm.country.$invalid && !registerationForm.country.$pristine }" >
+                        <label for="country" class="control-label col-md-4">Country: </label>
+                        <div class="col-md-6">
+                        <input type="text" class="form-control" id="country" name="country" ng-model="userInfo.country" placeholder="Please enter the country of residence" required>
+                        <span ng-show="registerationForm.country.$error.required && !registerationForm.country.$pristine" class="help-block">Please enter the valid country.</span>
+                      </div>
+                    </div>
+                     <div class="form-group" >
+                       <div class="checkbox col-md-12 col-md-offset-4">
+                        <label class="checkbox-inline"></label>
+                        <div class="col-md-6">
+                        <input type="checkbox" id="termsConditions" ng-model="userInfo.agree" ng-required="!userInfo.agree"> I agree to the <a href="">Terms and Conditions</a>
+                        <!--<span ng-show="registerationForm.termsConditions.$error.required && !registerationForm.terms&conditions.$pristine" class="help-block">Please select the checkbox.</span>-->
+                      </div>
+                     </div>
+                    </div>
+                      <!--</div>-->
+                    <!--</div>-->
+                    <div class="form-group" >
+                        <label for="submit" class="control-label col-md-4"></label>
+                        <div class="col-md-6">
+                            <br>
+                            <button type="submit" class="btn btn-success" ng-disabled="registerationForm.$invalid" onclick="" style="width:150px">Register</button>
+                      </div>
+                    </div>
+                   <!-- {{userInfo.firstname}}-->
+                  </form>
+            </div>
+        </div>
+    </body>
+</html>
